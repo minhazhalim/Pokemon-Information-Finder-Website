@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width,initial-scale=1.0">
+     <meta name="author" content="minhaz Halim Zim">
+     <meta name="description" content="A Simple, Nice and Structured of Pokemon Information by Species, Types, Evolutions, and Moves.">
+     <title>Pokemon Information Finder Website</title>
+     <link rel="shortcut icon" href="./assets/images/favicon.ico" type="image/x-icon">
+     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css' integrity='sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==' crossorigin='anonymous'/>
+     <link rel="preconnect" href="https://fonts.googleapis.com"/>
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500&family=Raleway:wght@300;400;500;700&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="./assets/css/style.css">
+     <script src="./assets/js/component/pokemon.js" defer></script>
+     <script src="./assets/js/model/pokemon.js" defer></script>
+     <script src="./assets/js/pokeapi.js" defer></script>
+     <script src="./assets/js/render_pokemons.js" defer></script>
+     <script src="./assets/js/render_dialog.js" defer></script>
+     <script src="./assets/js/script.js" defer></script>
+</head>
+<body>
+     <div class="fullpage-container">
+          <main>
+               <div class="main-container">
+                    <div class="title"><h1>pokemon information search</h1></div>
+                    <section class="filter">
+                         <p>name or number</p>
+                         <div class="filter-container">
+                              <input type="search" name="search-pokemon" id="search-pokemon" placeholder="search or find pokemon information">
+                              <button type="submit" name="search-button" id="search-button">search</button>
+                         </div>
+                         <span id="search-error">please, enter a valid pokemon name or number</span>
+                    </section>
+                    <section class="pokedex-results">
+                         <div class="pokedex-results_container">
+                              <ul class="pokemons-list"></ul>
+                         </div>
+                    </section>
+               </div>
+          </main>
+          <footer class="footer">
+               <div id="copyright">
+                    <span>minhazhalim.github.io/Pokemon-Information-Finder-Website &#10084;&#65039; project made with html, sass, and javascript</span>
+                    <span>&copy; 2025 - <a href="https://github.com/minhazhalim" target="_blank" rel="noopener">minhaz halim zim</a></span>
+               </div>
+          </footer>
+     </div>
+     <dialog id="pokemon-dialog">
+          <div class="back-button"></div>
+          <div class="close-button"></div>
+          <div class="dialog-container">
+               <div class="pokemon-information">
+                    <div class="title">
+                         <h2 id="pokemon-name"></h2>
+                         <span id="pokemon-id"></span>
+                    </div>
+                    <picture><img src="" alt="" id="pokemon-image"></picture>
+               </div>
+               <div class="pokemon-stats">
+                    <div class="title">status</div>
+                    <ul>
+                         <li id="pokemon-vitality"></li>
+                         <li id="pokemon-attack"></li>
+                         <li id="pokemon-defense"></li>
+                         <li id="pokemon-speed"></li>
+                         <li id="pokemon-special-attack"></li>
+                         <li id="pokemon-special-defense"></li>
+                    </ul>
+               </div>
+               <div class="pokemon-data">
+                    <div class="title">profile</div>
+                    <ul>
+                         <li>
+                              <span>height</span>
+                              <span id="pokemon-height"></span>
+                         </li>
+                         <li>
+                              <span>weight</span>
+                              <span id="pokemon-weight"></span>
+                         </li>
+                         <li>
+                              <span>category</span>
+                              <span id="pokemon-category"></span>
+                         </li>
+                         <li id="pokemon-abilities"></li>
+                    </ul>
+               </div>
+               <div class="pokemon-evolutions">
+                    <div class="title">evolutions</div>
+                    <ul id="pokemon-evolutions-list"></ul>
+               </div>
+               <div class="pokemon-types">
+                    <div class="title">type</div>
+                    <ul id="pokemon-types"></ul>
+               </div>
+          </div>
+     </dialog>
+     <div class="dialog-overlay" id="dialog-overlay"></div>
+</body>
+</html>
